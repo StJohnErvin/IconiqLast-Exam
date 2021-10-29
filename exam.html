@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #name{
+            margin-left: 20px;
+        }
+        #black{
+            background-color: black;
+            height:70px;
+            width: 200px;
+            align-content: center;
+        }
+        #myname{
+            text-align: center;
+            margin-left: 20px;
+            position: absolute;
+            height: 40px;
+            width: 150px;
+            margin-top: 15px;
+            background-color: blue;
+            border-radius: 10px;
+            animation-fill-mode: forwards;
+            transition: all 1s ease-out;
+            display: none;
+            
+        }
+        @keyframes ani{
+            0%{
+                height: 0px;
+                width: 0px;
+            }
+            50%{
+                height: 50px;
+                width: 160px;
+            }
+            100%{
+                height: 40px;
+                width: 150px;
+            }
+        }
+        #display{
+            font-size: 18px;
+            padding-top: 0px;
+            line-height: 40px;
+            color: white;
+        }
+        #click{
+            margin-left: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="name"><br><br>
+        <div id="black">
+            <div id="myname">
+                <span id="display"></span>
+            </div>
+        </div> <br>
+        <button id="click">Button</button>
+    </div>
+    
+<script>
+    let click = document.getElementById("click")
+    click.onclick = ()=>{
+        animate()
+       
+    }
+    function animate(){
+        let name = document.getElementById("name").value
+        let myname = document.getElementById("myname")
+        myname.style.animation = "ani 0.3s"
+        myname.style.display = "block"
+       
+
+        let display = document.getElementById("display")
+        
+        display.innerText = name
+    }
+</script>
+</body>
+</html>
